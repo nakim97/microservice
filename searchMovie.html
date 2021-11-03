@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Microservice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  type="text/css"   href="/stylesheets/styles.css">
+</head>
+
+<body>
+    <h1 id="movieTitle"> Search Movies by Movie Title </h1>
+
+    <div id="movieContainer">
+        <input type="text" id="searchMovie" placeholder="Search Movie Titles...">
+        <button type="submit" id="searchMovieBtn">Search</button>
+    </div>
+   
+    <script>
+        // Search Function for Searching Movies by Movie Title
+        document.getElementById("searchMovieBtn").onclick = function(){
+            const movieQuery = document.getElementById("searchMovie").value;
+            location.href = `/search/movies/${movieQuery}`;
+        }
+    </script>
+    
+</body>
+</html>

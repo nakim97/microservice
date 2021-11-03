@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+#homeTitle,
+#genreTitle,
+#actorTitle,
+#movieTitle {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 10%;
+}
+
+#homeContainer,
+#actorContainer,
+#movieContainer {
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+}
+
+#genreBtn,
+#actorBtn,
+#movieBtn {
+  width: 200px;
+  height: 200px;
+  font-size:20px;
+  cursor: pointer;
+  margin-right: 50px;
+}
+
+#genreTitle{
+    margin-bottom: 50px;
+}
+
+#buttonDiv {
+  text-align: center;
+  display: grid;
+  width: 800px;
+  justify-content: center;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr ;
+}
+
+#buttonDiv button {
+  width: 200px;
+  height: 30px;
+  font-size: 15px;
+  cursor:pointer;
+  margin-right: -50px;
+  margin-bottom: 30px;
+}
+
+#actorContainer input,
+#movieContainer input {
+  width: 500px;
+  height: 30px;
+  font-size: 15px;
+  margin-right: 20px;
+}
+
+#searchActorBtn,
+#searchMovieBtn {
+  width: 55px;
+  cursor: pointer;
+}

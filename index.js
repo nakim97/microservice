@@ -9,6 +9,7 @@ const api_key = 'ee04596001b19a1964b017c76bc5d185'
 
 const app = express();
 
+app.use(express.static(__dirname + '/public'));
 
 // Genre: Action id: 28
 const actionMovie = [];
@@ -277,12 +278,25 @@ async function westernMovies(){
 }
 westernMovies();
 
-
+// Get request for home 
 app.get('/', (req,res) => {
     res.sendFile(__dirname + '/index.html');
-
 })
 
+// Get request for Genre Page
+app.get('/genre', (req,res) => {
+    res.sendFile(__dirname + '/searchGenre.html');
+})
+
+// Get request for search actors page 
+app.get('/search/actor', (req,res) => {
+    res.sendFile(__dirname + '/searchActors.html');
+})
+
+// Get request for search movies page
+app.get('/search/movies', (req,res) => {
+    res.sendFile(__dirname + '/searchMovie.html');
+})
 
 
 // Requests for Movie Genres
@@ -382,6 +396,9 @@ app.get('/genre/western',(req,res) => {
     res.json(westernMovie);
 })
 
+
+// Function and Get Request to search actor and retrieve movies 
+
 // Search Actor and Actresses to view movie details
 async function searchActor(query){
     var page = 0;
@@ -392,10 +409,8 @@ async function searchActor(query){
         // console.log(jsonResponse);
         
         return jsonResponse;
-        
     }
 }
-
 
 // Get request to search actors/actresses
 app.get('/search/actor/:name', async(req,res) => {
