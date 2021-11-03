@@ -400,6 +400,7 @@ app.get('/genre/western',(req,res) => {
 // Function and Get Request to search actor and retrieve movies 
 
 // Search Actor and Actresses to view movie details
+const actorContainer = [];
 async function searchActor(query){
     var page = 0;
     for (var i = 0; i < 2; i++){
@@ -408,14 +409,21 @@ async function searchActor(query){
         const jsonResponse = await response.json();
         // console.log(jsonResponse);
         
-        return jsonResponse;
+        const displayResults = jsonResponse.results.map(data => {
+            return data.known_for
+        })
+
+        const data = JSON.stringify(displayResults);
+        actorContainer.push(data);
+        
     }
 }
 
 // Get request to search actors/actresses
 app.get('/search/actor/:name', async(req,res) => {
-    var searchQuery = await searchActor(req.params.name);
-    res.json(searchQuery);
+    actorContainer.length =0;
+    await searchActor(req.params.name);
+    res.json(actorContainer);
 })
 
 
