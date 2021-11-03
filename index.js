@@ -1,6 +1,9 @@
 
 import express, { json } from 'express';
 import fetch from "node-fetch";
+import path from "path";
+
+const __dirname = path.resolve();
 
 const api_key = 'ee04596001b19a1964b017c76bc5d185'
 
@@ -275,24 +278,8 @@ async function westernMovies(){
 westernMovies();
 
 
-
 app.get('/', (req,res) => {
-    res.write("<h1> Movie Details MicroService </h1>");
-    res.write("<br>")
-    res.write("<h2> Search Movies by Movie Genres:</h2>");
-    res.write("<h3> localhost:3000/genre/insert genre name here || example: localhost:3000/genre/horror</h3>");
-    res.write("<h3> Genres Available: </h3>");
-    res.write("<p>Action, Adventure, Animation, Comedy, Crime, Documentary, Drama, Family, Fantasy, History, Horror, Music, Mystery, Romance, Science Fiction, TV, Thriller, War, Western </p>")
-
-    res.write("<br>")
-    res.write("<h2>Search Movies by Actor/Actress Names: </h2>");
-    res.write("<h3>localhost:3000/search/actor/ insert actor name here || example: localhost:3000/search/actor/will smith </h3>");
-
-    res.write("<br>");
-    res.write("<h2>Search Movies by Movie Title: </h2>");
-    res.write("<h3>localhost:3000/search/movies/ insert movie title here || example: localhost:3000/search/movies/up </h3>")
-
-    res.send();
+    res.sendFile(__dirname + '/index.html');
 
 })
 
@@ -396,8 +383,6 @@ app.get('/genre/western',(req,res) => {
 })
 
 // Search Actor and Actresses to view movie details
-
-
 async function searchActor(query){
     var page = 0;
     for (var i = 0; i < 2; i++){
@@ -410,6 +395,7 @@ async function searchActor(query){
         
     }
 }
+
 
 // Get request to search actors/actresses
 app.get('/search/actor/:name', async(req,res) => {
@@ -428,8 +414,6 @@ async function searchMovies(query) {
         const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}&page=${page}`);
         const jsonResponse= await response.json();
         // console.log(jsonResponse);
-
-
         return jsonResponse;
     }
 }

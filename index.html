@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <h1> Movie Details Microservice </h1>
+
+    <h2> Search Movies by Genre</h2>
+    <button onclick="location.href = 'http://localhost:3000/genre/action'"> Action </button>
+    <button onclick="location.href = 'http://localhost:3000/genre/adventure'"> Adventure </button>
+    <button onclick="location.href = 'http://localhost:3000/genre/animation'"> Animation </button>
+    <button onclick="location.href = 'http://localhost:3000/genre/comedy'"> Comedy </button>
+    <button onclick="location.href = 'http://localhost:3000/genre/crime'"> Crime </button>
+    <button onclick="location.href = 'http://localhost:3000/genre/documentary'"> Documentary </button>
+    <button onclick="location.href = 'http://localhost:3000/genre/drama'"> Drama </button>
+    <button onclick="location.href = 'http://localhost:3000/genre/family'"> Family </button>
+    <button onclick="location.href = 'http://localhost:3000/genre/fantasy'"> Fantasy </button>
+    <button onclick="location.href = 'http://localhost:3000/genre/history'"> History </button>
+    <button onclick="location.href = 'http://localhost:3000/genre/horror'"> Horror </button>
+    <button onclick="location.href = 'http://localhost:3000/genre/music'"> Music </button>
+    <button onclick="location.href = 'http://localhost:3000/genre/mystery'"> Mystery </button>
+    <button onclick="location.href = 'http://localhost:3000/genre/romance'"> Romance </button>
+    <button onclick="location.href = 'http://localhost:3000/genre/sciencefiction'"> Science Fiction </button>
+    <button onclick="location.href = 'http://localhost:3000/genre/tv'"> TV </button>
+    <button onclick="location.href = 'http://localhost:3000/genre/thriller'"> Thriller </button>
+    <button onclick="location.href = 'http://localhost:3000/genre/war'"> War </button>
+    <button onclick="location.href = 'http://localhost:3000/genre/western'"> Western </button>
+
+    <h2> Search Movies by Actor Name </h2>
+    <input type="text" id= "searchActor" placeholder="Search Actors...">
+    <button type="submit" id="searchActorBtn" onclick="">Search</button>
+
+    <h2> Search Movies by Movie Title </h2>
+    <input type="text" id="searchMovie" placeholder="Search Movie Titles...">
+    <button type="submit" id="searchMovieBtn">Search</button>
+    
+
+<body>
+
+<script>
+    //  Search Function for Searching Movies by Actor Name 
+    document.getElementById("searchActorBtn").onclick = function(){
+        const actorQuery = document.getElementById("searchActor").value;
+        location.href = `/search/actor/${actorQuery}`;
+ 
+    }
+    // Search Function for Searching Movies by Movie Title
+    document.getElementById("searchMovieBtn").onclick = function(){
+        const movieQuery = document.getElementById("searchMovie").value;
+        location.href = `/search/movies/${movieQuery}`;
+    }
+</script>
+
+</body>
+</html>
