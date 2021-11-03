@@ -2,9 +2,9 @@
 
 
 ## Features
-- Search Movies by Genre
-- Search Movies by Actor/Actress Names
-- Search Movies by Movie Title 
+- Search Movies by Genre ( /genre/? )
+- Search Movies by Actor/Actress Names ( /search/actor/? )
+- Search Movies by Movie Title ( /search/movies/? )
 
 ## Instructions
 - Enter "npm i" or "npm install" in terminal to install all packages
