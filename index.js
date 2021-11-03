@@ -428,22 +428,26 @@ app.get('/search/actor/:name', async(req,res) => {
 
 
 
-// Search Movies
+// Search Movies by Title ** NOTE that it may take awhile for the page to load as some results are large**
 
+// Search Movies by Title Function
+const movieContainer = [];
 async function searchMovies(query) {
     var page = 0;
-    for (var i=0; i < 1000; i++){
+    for (var i=0; i < 50; i++){
         page++;
         const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}&page=${page}`);
         const jsonResponse= await response.json();
         // console.log(jsonResponse);
-        return jsonResponse;
+        movieContainer.push(jsonResponse.results);
     }
 }
 
+// Get request for searching movies by title 
 app.get('/search/movies/:title', async(req,res) => {
-    var searchMovieQuery = await searchMovies(req.params.title);
-    res.json(searchMovieQuery);
+    movieContainer.length = 0;
+    await searchMovies(req.params.title);
+    res.json(movieContainer);
 
 })
 
