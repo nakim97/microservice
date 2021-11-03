@@ -399,33 +399,34 @@ app.get('/genre/western',(req,res) => {
 
 // Function and Get Request to search actor and retrieve movies 
 
-// Search Actor and Actresses to view movie details
+// Get Actor ID
 const actorContainer = [];
-async function searchActor(query){
-    var page = 0;
-    for (var i = 0; i < 2; i++){
-        page ++;
-        const response = await fetch(`https://api.themoviedb.org/3/search/person?api_key=${api_key}&query=${query}&page=${page}`);
-        const jsonResponse = await response.json();
-        // console.log(jsonResponse);
-        
-        const displayResults = jsonResponse.results.map(data => {
-            return data.known_for
-        })
-
-        const data = JSON.stringify(displayResults);
-        actorContainer.push(data);
-        
-    }
+async function getActor(query){
+    let page = 1;
+    const response = await fetch(`https://api.themoviedb.org/3/search/person?api_key=${api_key}&query=${query}&page=${page}`);
+    const jsonResponse = await response.json();
+    actorContainer.push(jsonResponse.results[0].id);
+    
 }
 
+// Search Actor and Actresses to view movie details
+const searchActorContainer = [];
+async function searchActor(){
+    let page = 1;
+    const response = await fetch(`https://api.themoviedb.org/3/person/${actorContainer}/movie_credits?api_key=${api_key}&page=${page}`);
+    const jsonResponse = await response.json();
+    // console.log(jsonResponse)
+    searchActorContainer.push(jsonResponse);
+
+}
 // Get request to search actors/actresses
 app.get('/search/actor/:name', async(req,res) => {
     actorContainer.length =0;
-    await searchActor(req.params.name);
-    res.json(actorContainer);
+    searchActorContainer.length =0;
+    await getActor(req.params.name);
+    await searchActor();
+    res.json(searchActorContainer);
 })
-
 
 
 // Search Movies by Title ** NOTE that it may take awhile for the page to load as some results are large**
