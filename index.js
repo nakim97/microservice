@@ -1,7 +1,7 @@
-
 import express, { json } from 'express';
 import fetch from "node-fetch";
 import path from "path";
+import cors from 'cors';
 
 const __dirname = path.resolve();
 
@@ -9,6 +9,7 @@ const api_key = 'ee04596001b19a1964b017c76bc5d185'
 
 const app = express();
 
+app.use(cors());
 app.use(express.static(__dirname + '/public'));
 
 // Genre: Action id: 28
