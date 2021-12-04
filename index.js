@@ -12,6 +12,8 @@ const app = express();
 app.use(cors());
 app.use(express.static(__dirname + '/public'));
 
+// Functions to Fetch Genre and its respective movie list
+
 // Genre: Action id: 28
 const actionMovie = [];
 async function actionMovies(){
@@ -279,6 +281,8 @@ async function westernMovies(){
 }
 westernMovies();
 
+// GET REQUESTS 
+
 // Get request for home 
 app.get('/', (req,res) => {
     res.sendFile(__dirname + '/index.html');
@@ -400,7 +404,7 @@ app.get('/genre/western',(req,res) => {
 
 // Function and Get Request to search actor and retrieve movies 
 
-// Get Actor ID
+// Function to Get Actor ID
 const actorContainer = [];
 async function getActor(query){
     let page = 1;
@@ -410,7 +414,7 @@ async function getActor(query){
     
 }
 
-// Search Actor and Actresses to view movie details
+// Search Actor and Actresses to view movie details Function
 const searchActorContainer = [];
 async function searchActor(){
     let page = 1;
@@ -420,7 +424,7 @@ async function searchActor(){
     searchActorContainer.push(jsonResponse);
 
 }
-// Get request to search actors/actresses
+// Get request to search actors/actresses Function
 app.get('/search/actor/:name', async(req,res) => {
     actorContainer.length =0;
     searchActorContainer.length =0;
@@ -430,7 +434,7 @@ app.get('/search/actor/:name', async(req,res) => {
 })
 
 
-// Search Movies by Title ** NOTE that it may take awhile for the page to load as some results are large**
+// Search Movies by Title 
 
 // Search Movies by Title Function
 const movieContainer = [];
@@ -445,7 +449,7 @@ async function searchMovies(query) {
     }
 }
 
-// Get request for searching movies by title 
+// Get request for searching movies by title Function
 app.get('/search/movies/:title', async(req,res) => {
     movieContainer.length = 0;
     await searchMovies(req.params.title);
