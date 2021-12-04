@@ -1,5 +1,6 @@
 # Movie Details Microservice
 
+## Hosted on Heroku: https://movie-details-microservice.herokuapp.com/ 
 
 ## Features
 - Search Movies by Genre ( /genre/? )
