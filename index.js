@@ -22,7 +22,6 @@ async function actionMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=28&page=${page}`);
         const jsonResponse = await response.json();
-        // console.log(jsonResponse);
         actionMovie.push(jsonResponse);
     }
 }
@@ -36,9 +35,7 @@ async function adventureMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=12&page=${page}`);
         const jsonResponse = await response.json();
-         // console.log(jsonResponse);
-
-         adventureMovie.push(jsonResponse);
+        adventureMovie.push(jsonResponse);
     }
 }
 adventureMovies();
@@ -51,8 +48,7 @@ async function animationMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=16&page=${page}`);
         const jsonResponse = await response.json();
-         // console.log(jsonResponse);
-         animationMovie.push(jsonResponse);
+        animationMovie.push(jsonResponse);
     }
 }
 animationMovies();
@@ -65,8 +61,7 @@ async function comedyMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=35&page=${page}`);
         const jsonResponse = await response.json();
-         // console.log(jsonResponse);
-         comedyMovie.push(jsonResponse);
+        comedyMovie.push(jsonResponse);
     }
 }
 comedyMovies();
@@ -79,7 +74,6 @@ async function crimeMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=80&page=${page}`);
         const jsonResponse = await response.json();
-         // console.log(jsonResponse);
         crimeMovie.push(jsonResponse);
     }
 }
@@ -93,8 +87,7 @@ async function documentaryMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=99&page=${page}`);
         const jsonResponse = await response.json();
-         // console.log(jsonResponse);
-         documentaryMovie.push(jsonResponse);
+        documentaryMovie.push(jsonResponse);
     }
 }
 documentaryMovies();
@@ -107,7 +100,6 @@ async function dramaMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=18&page=${page}`);
         const jsonResponse = await response.json();
-         // console.log(jsonResponse);
         dramaMovie.push(jsonResponse);
     }
 }
@@ -121,8 +113,7 @@ async function familyMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=10751&page=${page}`);
         const jsonResponse = await response.json();
-         // console.log(jsonResponse);
-         familyMovie.push(jsonResponse);
+        familyMovie.push(jsonResponse);
     }
 }
 familyMovies();
@@ -135,8 +126,7 @@ async function fantasyMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=14&page=${page}`);
         const jsonResponse = await response.json();
-         // console.log(jsonResponse);
-         fantasyMovie.push(jsonResponse);
+        fantasyMovie.push(jsonResponse);
     }
 }
 fantasyMovies();
@@ -149,8 +139,7 @@ async function historyMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=36&page=${page}`);
         const jsonResponse = await response.json();
-         // console.log(jsonResponse);
-         historyMovie.push(jsonResponse);
+        historyMovie.push(jsonResponse);
     }
 }
 historyMovies();
@@ -163,8 +152,7 @@ async function horrorMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=27&page=${page}`);
         const jsonResponse = await response.json();
-         // console.log(jsonResponse);
-         horrorMovie.push(jsonResponse);
+        horrorMovie.push(jsonResponse);
     }
 }
 horrorMovies();
@@ -177,8 +165,7 @@ async function musicMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=10402&page=${page}`);
         const jsonResponse = await response.json();
-         // console.log(jsonResponse);
-         musicMovie.push(jsonResponse);
+        musicMovie.push(jsonResponse);
     }
 }
 musicMovies();
@@ -191,7 +178,6 @@ async function mysteryMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=9648&page=${page}`);
         const jsonResponse = await response.json();
-         // console.log(jsonResponse);
         mysteryMovie.push(jsonResponse);
     }
 }
@@ -205,8 +191,7 @@ async function romanceMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=10749&page=${page}`);
         const jsonResponse = await response.json();
-         // console.log(jsonResponse);
-         romanceMovie.push(jsonResponse);
+        romanceMovie.push(jsonResponse);
     }
 }
 romanceMovies();
@@ -219,8 +204,7 @@ async function sciencefictionMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=878&page=${page}`);
         const jsonResponse = await response.json();
-         // console.log(jsonResponse);
-         sciencefictionMovie.push(jsonResponse);
+        sciencefictionMovie.push(jsonResponse);
     }
 }
 sciencefictionMovies();
@@ -233,8 +217,7 @@ async function tvMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=10770&page=${page}`);
         const jsonResponse = await response.json();
-         // console.log(jsonResponse);
-         tvMovie.push(jsonResponse);
+        tvMovie.push(jsonResponse);
     }
 }
 tvMovies();
@@ -247,7 +230,6 @@ async function thrillerMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=53&page=${page}`);
         const jsonResponse = await response.json();
-         // console.log(jsonResponse);
         thrillerMovie.push(jsonResponse);
     }
 }
@@ -261,8 +243,7 @@ async function warMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=10752&page=${page}`);
         const jsonResponse = await response.json();
-         // console.log(jsonResponse);
-         warMovie.push(jsonResponse);
+        warMovie.push(jsonResponse);
     }
 }
 warMovies();
@@ -275,8 +256,7 @@ async function westernMovies(){
         page ++;
         const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=37&page=${page}`);
         const jsonResponse = await response.json();
-         // console.log(jsonResponse);
-         westernMovie.push(jsonResponse);
+        westernMovie.push(jsonResponse);
     }
 }
 westernMovies();
@@ -420,7 +400,6 @@ async function searchActor(){
     let page = 1;
     const response = await fetch(`https://api.themoviedb.org/3/person/${actorContainer}/movie_credits?api_key=${api_key}&page=${page}`);
     const jsonResponse = await response.json();
-    // console.log(jsonResponse)
     searchActorContainer.push(jsonResponse);
 
 }
@@ -444,7 +423,6 @@ async function searchMovies(query) {
         page++;
         const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}&page=${page}`);
         const jsonResponse= await response.json();
-        // console.log(jsonResponse);
         movieContainer.push(jsonResponse.results);
     }
 }
